@@ -192,7 +192,7 @@ class musicCard {
             ctx.drawImage(background, 0, 0, 1280, 450);
 
             ctx.fillStyle = `#${validatedColor}`;
-            ctx.font = `75px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
+            ctx.font = `65px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
             ctx.fillText(this.name, 70, 120);
 
             ctx.fillStyle = '#b8b8b8';
