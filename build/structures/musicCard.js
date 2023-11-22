@@ -22,8 +22,6 @@ class musicCard {
         this.brightness = options?.brightness ?? null;
         this.thumbnail = options?.thumbnail ?? null;
         this.progress = options?.progress ?? null;
-        this.starttime = options?.startTime ?? null;
-        this.endtime = options?.endTime ?? null;
         this.requester = options?.requester ?? null
     }
 
@@ -62,16 +60,6 @@ class musicCard {
         return this;
     }
 
-    setStartTime(starttime) {
-        this.starttime = starttime;
-        return this;
-    }
-
-    setEndTime(endtime) {
-        this.endtime = endtime;
-        return this;
-    }
-
     setRequester(requester) {
         this.requester = `Requested by ${requester}`;
         return this;
@@ -86,17 +74,12 @@ class musicCard {
         if (!this.brightness) this.setBrightness(0);
         if (!this.thumbnail) this.setThumbnail('https://s6.imgcdn.dev/Opo4a.jpg');
         if (!this.progress) this.setProgress(0);
-        if (!this.starttime) this.setStartTime('0:00');
-        if (!this.endtime) this.setEndTime('0:00');
 
         let validatedProgress = parseFloat(this.progress);
         if (Number.isNaN(validatedProgress) || validatedProgress < 0 || validatedProgress > 100) throw new Error('Invalid progress parameter, must be between 0 to 100');
 
         if (validatedProgress < 2) validatedProgress = 2;
         if (validatedProgress > 99) validatedProgress = 99;
-
-        const validatedStartTime = this.starttime || '0:00';
-        const validatedEndTime = this.endtime || '0:00';
 
         const validatedColor = await colorFetch(
             this.color || 'ff0000',
@@ -202,14 +185,6 @@ class musicCard {
             ctx.fillStyle = '#b8b8b8';
             ctx.font = `45px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
             ctx.fillText(this.requester, 75, 240);
-
-            ctx.fillStyle = '#fff';
-            ctx.font = '30px circular-std';
-            ctx.fillText(validatedStartTime, 70, 410);
-
-            ctx.fillStyle = '#fff';
-            ctx.font = '30px circular-std';
-            ctx.fillText(validatedEndTime, 680, 410);
 
             ctx.drawImage(thumbnailCanvas, 837, 8, 435, 435);
             ctx.drawImage(progressBarCanvas, 70, 340, 670, 25);
