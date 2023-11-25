@@ -180,15 +180,13 @@ class musicCard {
 
             ctx.fillStyle = '#b8b8b8';
             ctx.font = `50px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
-            ctx.fillText(this.author, 75, 190);
+            ctx.fillText(this.author, 75, 220);
 
             ctx.fillStyle = '#b8b8b8';
             ctx.font = `45px circular-std, noto-emoji, noto-sans-jp, noto-sans, noto-sans-kr`;
-            ctx.fillText(this.requester, 75, 240);
+            ctx.fillText(this.requester, 80, 380, 670, 25);
 
             ctx.drawImage(thumbnailCanvas, 837, 8, 435, 435);
-            ctx.drawImage(progressBarCanvas, 70, 340, 670, 25);
-            ctx.drawImage(circleCanvas, 10, 255, 1000, 1000);
 
             return image.toBuffer('image/png');
         } else if (this.theme == 'dynamic') {
