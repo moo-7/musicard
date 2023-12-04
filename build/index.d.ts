@@ -6,7 +6,7 @@ export declare class musicCard {
     theme?: "classic" | "dynamic";
     brightness?: number;
     thumbnail?: string;
-    progress?: number;
+    requester?: string;
   });
 
   public setName(name: string): this;
@@ -15,7 +15,6 @@ export declare class musicCard {
   public setTheme(theme: "classic" | "dynamic"): this;
   public setBrightness(brightness: number): this;
   public setThumbnail(thumbnail: string): this;
-  public setProgress(progress: number): this;
   public setRequester(requester: string): this;
 
   public build(): Promise<Buffer>;

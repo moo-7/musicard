@@ -3,18 +3,16 @@
     const fs = require("fs");
 
     const card = new musicCard()
-        .setName("Bad Habits")
-        .setAuthor("By Ed Sheeran")
+        .setName("GHEA INDRAWARI")
+        .setAuthor("HITS RECORD")
         .setColor("auto")
-        .setTheme("dynamic")
+        .setTheme("classic")
         .setBrightness(50)
+        .setRequester((song?.requester as User).username.toUpperCase())
         .setThumbnail("https://static.qobuz.com/images/covers/ga/ua/rmk2cpqliuaga_600.jpg")
-        .setProgress(10)
-        .setStartTime("0:00")
-        .setEndTime("3:00")
 
     const cardBuffer = await card.build();
 
-    fs.writeFileSync(`musicCard.png`, cardBuffer);
+    fs.writeFileSync(`musicard.png`, cardBuffer);
     console.log("Done!");
 })()
