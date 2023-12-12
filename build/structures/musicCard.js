@@ -135,7 +135,7 @@ class musicCard {
             circleCtx.fillStyle = `#${validatedColor}`;
             circleCtx.fill();
 
-            const background = await canvas.loadImage(`https://s6.imgcdn.dev/ZDjTD.png`);
+            const background = await canvas.loadImage(`https://cdn.is-a.fun/madebytragic/mewwmecard1.png`);
 
             const thumbnailCanvas = canvas.createCanvas(564, 564);
             const thumbnailCtx = thumbnailCanvas.getContext('2d');
